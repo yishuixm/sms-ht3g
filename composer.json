@@ -5,7 +5,7 @@
   "keywords": ["sms"],
   "homepage": "https://github.com/yishuixm/sms-ht3g",
   "license": "MIT",
-  
+  "minimum-stability": "stable",
   "authors": [
     {
       "name": "yishuixm",
