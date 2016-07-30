@@ -1,6 +1,6 @@
 {
   "name": "yishuixm/sms-ht3g",
-  "description": "sms-ht3g v1.0.2",
+  "description": "sms-ht3g send sms",
   "type":"library",
   "keywords": ["sms"],
   "homepage": "https://github.com/yishuixm/sms-ht3g",

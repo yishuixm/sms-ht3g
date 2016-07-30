@@ -30,11 +30,12 @@ class Ht3g
      * @param $account 用户帐号
      * @param $password 用户账号对应的密码
      */
-    public function __construct($userid,$account,$password)
+    public function __construct($userid,$account,$password,$debug=false)
     {
         $this->userid = $userid;
         $this->account = $account;
         $this->password = $password;
+        $this->debug = $debug;
     }
 
     /**
@@ -64,7 +65,9 @@ class Ht3g
             'extno'         => ''
         ]);
 
-        $this->debug_info['data'] = $data;
+        if($this->debug){
+            $this->debug_info['data'] = $data;
+        }
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->server_url);
