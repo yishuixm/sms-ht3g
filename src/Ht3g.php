@@ -20,6 +20,10 @@ class Ht3g
     //用户账号对应的密码
     private $password;
 
+    // 调试
+    private $debug = false;
+    private $debug_info;
+
     /**
      * 构造函数
      * @param $userid 企业ID
@@ -33,6 +37,21 @@ class Ht3g
         $this->password = $password;
     }
 
+    /**
+     * 得到DEBUG信息
+     * @return mixed
+     */
+    public function getDebug(){
+        return $this->debug_info;
+    }
+
+    /**
+     * 发送短信
+     * @param $mobile
+     * @param $content
+     * @param string $sendTime
+     * @return mixed|string
+     */
     public function sendTo($mobile, $content, $sendTime=''){
         $data = http_build_query([
             'userid'        => $this->userid,
@@ -44,6 +63,9 @@ class Ht3g
             'sendTime'      => $sendTime,
             'extno'         => ''
         ]);
+
+        $this->debug_info['data'] = $data;
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->server_url);
         curl_setopt($ch, CURLOPT_POSTFIELDS, 'mypost=' . $data);
