@@ -1,6 +1,7 @@
 {
   "name": "yishuixm/sms-ht3g",
   "description": "sms-ht3g v1.0.2",
+  "minimum-stability": "dev",
   "license": "MIT",
   "keywords": ["sms"],
   "version": "1.0.2",
