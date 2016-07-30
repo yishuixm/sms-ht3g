@@ -1,11 +1,13 @@
 {
   "name": "yishuixm/sms-ht3g",
   "description": "sms-ht3g v1.0.2",
-  "minimum-stability": "dev",
-  "license": "MIT",
+  "type":"library",
   "keywords": ["sms"],
-  "version": "1.0.2",
+  "homepage": "https://github.com/yishuixm/sms-ht3g",
+  "license": "MIT",
 
+  "version": "1.0.2",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "yishuixm",
@@ -14,7 +16,7 @@
   ],
   "require": {
     "php": ">=5.5.0",
-    "another-vendor/package": "1.*"
+    "yishuixm/sms-Ht3g": "1.0.*"
   },
 
   "autoload": {
