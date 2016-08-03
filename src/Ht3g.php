@@ -71,12 +71,18 @@ class Ht3g
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->server_url);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, 'mypost=' . $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
         curl_setopt($ch, CURLOPT_USERAGENT, "somorn.com's CURL Example beta V1.0");
-        $data = curl_exec($ch);
+        $response = curl_exec($ch);
+        if(curl_errno($ch))
+        {
+            print curl_error($ch);
+        }
         curl_close($ch);
 
-        return $data;
+        return $response;
     }
 }
